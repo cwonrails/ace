@@ -4,9 +4,11 @@
   "description": "Full-featured Basscss package for web apps",
   "main": "index.js",
   "scripts": {
-    "start": "mkdir -p css && postcss index.css -u postcss-import -u postcss-custom-media -u postcss-custom-properties -u postcss-calc -u postcss-color-function -u postcss-remove-root -u autoprefixer -o css/ace.css",
-    "minify": "postcss css/ace.css -u cssnano -o css/ace.min.css",
-    "prepublish": "npm start && npm run minify",
+    "build": "npm run start && npm run minify",
+    "clean": "rm -rf css",
+    "start": "mkdir -p css && postcss index.css -u postcss-import postcss-custom-media postcss-custom-properties postcss-calc postcss-color-function postcss-remove-root autoprefixer --no-map -o css/ace.css",
+    "minify": "postcss css/ace.css -u cssnano --safe --no-map -o css/ace.min.css",
+    "rebuild": "npm run clean && npm run build",
     "docs": "npm run docs:data && npm run docs:build",
     "docs:dev": "nodemon --exec 'npm run docs' -e js,jsx",
     "docs:data": "node docs/build.js",
@@ -15,23 +17,23 @@
   "author": "Brent Jackson",
   "license": "MIT",
   "dependencies": {
-    "basscss": "^8.0.0",
+    "basscss": "^8.0.3",
     "basscss-addons": "^1.0.0",
     "basscss-basic": "^1.0.0",
-    "colors.css": "^2.3.0"
+    "colors.css": "^3.0.0"
   },
   "devDependencies": {
-    "autoprefixer": "^6.3.3",
-    "cssnano": "^3.5.2",
+    "autoprefixer": "^6.7.4",
+    "cssnano": "^3.10.0",
     "ejsx": "^1.0.0-b2",
     "marked": "^0.3.6",
     "nodemon": "^1.11.0",
-    "postcss-calc": "^5.2.0",
-    "postcss-cli": "^2.5.1",
-    "postcss-color-function": "^2.0.0",
+    "postcss-calc": "^5.3.1",
+    "postcss-cli": "^3.0.0-beta",
+    "postcss-color-function": "^3.0.0",
     "postcss-custom-media": "^5.0.1",
-    "postcss-custom-properties": "^5.0.0",
-    "postcss-import": "^8.0.2",
+    "postcss-custom-properties": "^5.0.2",
+    "postcss-import": "^9.1.0",
     "postcss-remove-root": "0.0.2"
   }
 }
