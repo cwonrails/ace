@@ -23,7 +23,7 @@
     "colors.css": "^3.0.0"
   },
   "devDependencies": {
-    "autoprefixer": "^6.7.4",
+    "autoprefixer": "^6.7.6",
     "cssnano": "^3.10.0",
     "ejsx": "^1.0.0-b2",
     "marked": "^0.3.6",
@@ -34,6 +34,8 @@
     "postcss-custom-media": "^5.0.1",
     "postcss-custom-properties": "^5.0.2",
     "postcss-import": "^9.1.0",
-    "postcss-remove-root": "0.0.2"
+    "postcss-remove-root": "0.0.2",
+    "stylelint": "^7.9.0",
+    "stylelint-config-standard": "^16.0.0"
   }
 }
